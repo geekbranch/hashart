@@ -1,15 +1,15 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Button } from 'evergreen-ui'
+import Splitter from "./components/Splitter/Splitter.js";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h4>
-          #art
-        </h4>
-      </header>
+    <div >
+        <Button>I am using Evergreen!</Button>
+        <Splitter 
+          leftPane={<p>left</p>}
+          rightPane={<p>right</p>} 
+        />
     </div>
   );
 }
