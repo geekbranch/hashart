@@ -1,9 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button } from "evergreen-ui";
 import Splitter from "./components/Splitter/Splitter.js";
 import Hash from "./components/Hash/gen-hash.js";
+import Chart from "./components/Chart/Chart.js";
 
 function App() {
+  const [colorArray, setColorArray] = useState([]);
+
+  const computeColorArray = cArray => {
+    setColorArray(cArray);
+  };
+
   return (
     <div>
       <Button>I am using Evergreen!</Button>
@@ -11,10 +18,10 @@ function App() {
         leftPane={
           <p>
             {" "}
-            <Hash></Hash>
+            <Hash computeColorArray={computeColorArray}></Hash>
           </p>
         }
-        rightPane={<p>right</p>}
+        rightPane={<Chart colorArray={colorArray} />}
       />
     </div>
   );
