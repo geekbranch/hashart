@@ -57,6 +57,8 @@ class genHash extends Component {
     // console.log(grid);
     this.setState({
       dataHexCode: grid
+    }, () => {
+      this.props.computeColorArray(this.state.dataHexCode) 
     });
   };
 
@@ -86,16 +88,14 @@ class genHash extends Component {
           openOnFocus
         />
         <Button
-          onClick={() =>
+          onClick={() => {
+            this.props.computeColorArray([]) 
             this.gridHexColors(this.state.algorithm, this.state.data)
+          }
           }
         >
           my hash
         </Button>
-        <div style={{ wordWrap: "break-word" }}>
-          {this.state.dataHexCode.length}
-          {this.state.dataHexCode}
-        </div>
       </div>
     );
   }
