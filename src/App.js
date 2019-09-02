@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Button } from "evergreen-ui";
 import Splitter from "./components/Splitter/Splitter.js";
 import Hash from "./components/Hash/gen-hash.js";
+import Form from "./components/form/formContainer.js";
 import Chart from "./components/Chart/Chart.js";
 
 function App() {
@@ -13,14 +14,8 @@ function App() {
 
   return (
     <div>
-      <Button>I am using Evergreen!</Button>
       <Splitter
-        leftPane={
-          <p>
-            {" "}
-            <Hash computeColorArray={computeColorArray}></Hash>
-          </p>
-        }
+        leftPane={<Form computeColorArray={computeColorArray} />}
         rightPane={<Chart colorArray={colorArray} />}
       />
     </div>
