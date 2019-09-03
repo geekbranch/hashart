@@ -1,0 +1,17 @@
+.cell {
+  outline: 1px solid none;
+  float: left;
+  height: 25%;
+  width: 12.5%;    
+}
+
+
+.flex-square{
+    width: 12.5%;
+    float: left;
+}
+.flex-square:before{
+    content: "";
+    display: block;
+    padding-top: 100%;
+}
